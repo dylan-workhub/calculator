@@ -1,3 +1,6 @@
+const output = document.querySelector('#output');
+const buttons = document.querySelectorAll('button');
+
 function add(num1, ...num){
     let numArgs = arguments.length;
     let total = 0;
@@ -60,3 +63,11 @@ function operate(operator, num1, num2){
             break;
     }
 }
+
+function displayNumbers(){
+    output.textContent += this.innerText;
+}
+
+buttons.forEach(item =>{
+    item.addEventListener('click', displayNumbers);
+});
