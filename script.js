@@ -69,6 +69,12 @@ function operatorPressed(){
         currentNum = output.textContent;
         result = operate(operationArr[0], result, currentNum);
         output.textContent = result;
+        if(operationArr[1] === '='){
+            inputValue = 0;
+            result = 0;
+            operationArr = [];
+            counter = 0;
+        }
     }
 }
 
