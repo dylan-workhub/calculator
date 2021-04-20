@@ -91,6 +91,14 @@ button{
     background-color:rgb(230, 100, 241);
 }
 
+#equals{
+    background-color:rgb(173, 240, 184);
+}
+
+#equals:active{
+    background-color:rgb(78, 235, 104);
+}
+
 button:hover{
     cursor:pointer;
 }
