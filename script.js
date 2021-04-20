@@ -1,11 +1,13 @@
 const output = document.querySelector('#output');
 const buttons = document.querySelectorAll('.numbers');
 const operatorButtons = document.querySelectorAll('.operators');
-const equateBtn = document.querySelector('#equals');
 const clearBtn = document.querySelector('#clear');
 let inputValue = 0;
-let operationArr = [];
+let currentNum = 0;
 let result = 0;
+let equalsPressed = false;
+let counter = 0;
+let operationArr = [];
 
 function add(num1, num2){
     return num1 + num2;
@@ -56,26 +58,16 @@ function displayNumbers(){
 }
 
 function operatorPressed(){
-    let currentOperator = this.innerText;
-    let tempObj = {};
-    tempObj.number = inputValue;
-    tempObj.operator = currentOperator;
-    operationArr.push(tempObj);
+    counter++;
     inputValue = 0;
-}
-
-function equateOperation(){
-    for(let i = 0; i < operationArr.length; i++){
-        if(operationArr[i].operator === '='){
-            console.log(result);
-            break;
-        }
-        else if(i === 0){
-            result += operate(operationArr[i].operator, operationArr[i].number, operationArr[i + 1].number);
-        }
-        else{
-            result = operate(operationArr[i].operator, result, operationArr[i + 1].number);
-        }
+    operationArr[0] = operationArr[1];
+    operationArr[1] = this.innerText;
+    if(counter === 1){
+        result = output.textContent;
+    }
+    else{
+        currentNum = output.textContent;
+        result = operate(operationArr[0], result, currentNum);
         output.textContent = result;
     }
 }
@@ -85,6 +77,7 @@ function clearSlate(){
     result = 0;
     operationArr = [];
     output.textContent = 0;
+    counter = 0;
 }
 
 buttons.forEach(item =>{
@@ -94,7 +87,5 @@ buttons.forEach(item =>{
 operatorButtons.forEach(item =>{
     item.addEventListener('click', operatorPressed);
 });
-
-equateBtn.addEventListener('click', equateOperation);
 
 clearBtn.addEventListener('click', clearSlate);

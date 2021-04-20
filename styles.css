@@ -48,6 +48,14 @@ h1{
     flex-direction:column;
 }
 
+#clear{
+    background-color:rgb(152, 247, 223);
+}
+
+#clear:active{
+    background-color:rgb(75, 243, 201);
+}
+
 .row{
     display:flex;
     flex-direction:row;
@@ -77,6 +85,10 @@ button{
 
 .operators{
     background-color:rgb(236, 178, 241);
+}
+
+.operators:active{
+    background-color:rgb(230, 100, 241);
 }
 
 button:hover{
