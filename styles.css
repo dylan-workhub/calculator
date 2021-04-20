@@ -13,6 +13,7 @@ body{
     justify-content:center;
     font-family:'Major Mono Display', monospace;
     font-size:1.5vmin;
+    background-image:url(images/double-bubble-outline.png);
 }
 h1{
     margin:0;
@@ -50,10 +51,20 @@ h1{
 
 #clear{
     background-color:rgb(152, 247, 223);
+    width:12.5%;
 }
 
 #clear:active{
     background-color:rgb(75, 243, 201);
+}
+
+#back{
+    width:12.5%;
+    background-color:rgb(152, 236, 247);
+}
+
+#back:active{
+    background-color:rgb(82, 232, 252);
 }
 
 .row{
