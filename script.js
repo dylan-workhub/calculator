@@ -81,7 +81,7 @@ function operatorPressed(){
     else{
         currentNum = output.textContent;
         result = operate(operationArr[0], result, currentNum);
-        if(!(isFinite(result))){
+        if(result === Infinity){
             output.textContent = 'Please do not divide by zero.';
             inputValue = 0;
             result = 0;
