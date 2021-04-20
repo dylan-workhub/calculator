@@ -24,7 +24,7 @@ h1{
     align-items:center;
 }
 
-#output{
+#outputBox{
     background-color:black;
     width:56vmin;
     color:green;
@@ -33,14 +33,14 @@ h1{
     justify-content:flex-end;
     border-top-left-radius:2vmin;
     border-top-right-radius:2vmin;
-    overflow:none;
+    overflow:hidden;
     font-family:'Major Mono Display', monospace;
     font-size:1.5vmin;
 }
 
 #output h2{
     padding-right:1vmin;
-    overflow:none;
+    overflow:hidden;
 }
 
 #buttons{
@@ -51,6 +51,19 @@ h1{
 .row{
     display:flex;
     flex-direction:row;
+    width:100%;
+}
+
+#decimal{
+    width:25%;
+}
+
+#zero{
+    width:50%;
+}
+
+#multiply{
+    width:25%;
 }
 
 button{
@@ -62,10 +75,27 @@ button{
     font-size:5vmin;
 }
 
+.operators{
+    background-color:rgb(236, 178, 241);
+}
+
 button:hover{
     cursor:pointer;
 }
 
 button:active{
     background-color:rgb(247, 176, 91);
+}
+
+.last-row{
+    width:56vmin;
+    display:flex;
+}
+
+.last-row #equals{
+    width:75%;
+}
+
+.last-row #divide{
+    width:25%;
 }
